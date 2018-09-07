@@ -1,0 +1,22 @@
+{
+  "name": "Lab_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "seed": "node ./tasks/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Ryan Edelstein",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "id": "0.0.0",
+    "mongodb": "^3.0.2",
+    "node-uuid": "^1.4.8",
+    "uu": "0.0.0",
+    "uuid": "^3.3.2"
+  }
+}
