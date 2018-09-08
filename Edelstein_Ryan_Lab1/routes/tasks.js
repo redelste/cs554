@@ -6,8 +6,9 @@ const taskData = data.tasks;
 router.get("/:id", async (req, res) => {
   try {
     const task = await taskData.getTaskById(req.params.id);
-    res.json(user);
+    res.json(task);
   } catch (e) {
+    console.log(e)
     res.status(404).json({ message: "not found!" });
   }
 });
@@ -59,13 +60,12 @@ router.post("/", async (req, res) => {
     );
     res.json(newTask);
   } catch (e) {
-    console.log(e);
-    res.sendStatus(500);
+    res.sendStatus(500).json({error: "You messed up somewhere"});
   }
 });
 
 router.put("/:id", async (req, res) => {
-  console.log("TESTING");
+  // console.log("TESTING");
   const taskInfo = req.body;
   if (!taskInfo) {
     res.status(400).json({ error: "You must provide data to update a task" });
@@ -99,7 +99,7 @@ router.put("/:id", async (req, res) => {
 
 
 router.patch("/:id", async (req, res)=>{
-  console.log("DO PLEASE");
+  // console.log("DO PLEASE");
   try{
     let patchTask = await taskData.taskPatch(req.params.id, req.body);
     res.json(patchTask);
@@ -109,14 +109,28 @@ router.patch("/:id", async (req, res)=>{
 });
 
 router.post("/:id/comments", async(req, res)=>{
-  const recipe = req.body;
+  // console.log(req);
+  const { id } = req.params
   try{
-    const { name, comment } = await recipe
-    const added = await taskData.addComment(name, comment)
+    const { name, comment } = req.body;
+    // console.log("name: ", name)
+    // console.log("id", id)
+    // console.log("comment", comment)
+    const added = await taskData.addComment(id, name, comment)
     res.status(200).json(added)
-  } catch(err){}
-  res.status(500).json({error:err});
+  } catch(e){
+    // console.log(e)
+    res.status(500).json({error:e});
+  }
+})
 
+router.delete("/:taskId/:commentId", async(req,res)=>{
+  const { id, comment } = req.params
+  try {
+    
+  } catch (e) {
+    res.status(500).json({error:e});
+  }
 })
 
 

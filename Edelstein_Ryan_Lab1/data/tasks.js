@@ -25,7 +25,7 @@ let exportedMethods = {
     if(typeof description !== 'string' || description == "") throw "You must include a description"
     if(typeof hoursEstimated !== 'number' || hoursEstimated < 0) throw "You must enter the number of hours estimated"
     if(typeof completed !== 'boolean') throw "You must enter a bool val"
-    if(!comments instanceof Array) throw "The comments must be an array"
+    // if(!comments instanceof Array) throw "The comments must be an array"
     try{
       return tasks().then(taskCollection => {
         let newTask = {
@@ -33,7 +33,7 @@ let exportedMethods = {
           description: description,
           hoursEstimated: hoursEstimated,
           completed: completed, //Boolean value
-          comments: comments,
+          comments: [],
           _id: uuid.v4()
         };
         return taskCollection
@@ -64,7 +64,6 @@ let exportedMethods = {
     if(typeof completed !== 'boolean') throw "You must enter a bool val"
     if(!comments instanceof Array) throw "The comments must be an array"
     try {
-      console.log("I MIGHT DIE");
       return this.getTaskById(id).then(currentTask => {
         let taskUpdateInfo = {
           title: title,
@@ -73,7 +72,6 @@ let exportedMethods = {
           completed: completed, //Boolean value
           comments: comments
         };
-        console.log("PLEASE");
         let updateCommand = {
           $set: taskUpdateInfo
         };
@@ -91,7 +89,6 @@ let exportedMethods = {
   async taskPatch(id, patchedTask){
     if(typeof(id) !== 'string') throw "ID IS NOT VALID"
     if(!patchedTask) throw "Input cannot be null"
-    console.log("MIDS");
     try{
       const taskCollection = await tasks();
       let newTaskboy = {};
@@ -114,14 +111,12 @@ let exportedMethods = {
         $set: newTaskboy
       }
       const patched = await taskCollection.updateOne({_id:id}, newData)
-      if (!patched.value == null) throw "fuck"
-      console.log("Mids");
       return await this.getTaskById(id);
     }catch(e){}
-  }
+  },
   async addComment(id, name, comment) {
-    if(!id) throw "Please Provide a task ID"
-    if(typeof name !== "string") throw "Names' gotta be a string"
+    if (!id) throw "Please Provide a task ID"
+    if (typeof name !== "string") throw "Names' gotta be a string"
     if (typeof comment !== "string") throw "You must provide a valid comment";
 
 
@@ -129,15 +124,23 @@ let exportedMethods = {
     const newComment = {
       _id: uuid.v4(),
       name: name,
-      comment: comment,
+      comment: comment
     };
-    const added = await taskCollection.updateOne({_id:id}, {$push: {comments: newComment}});
-
-    return await this.getTaskById(newId);
+    const added = await taskCollection.updateOne({_id:id}, {$push: {comments: newComment}})
+    return {commentAdded: added.modifiedCount > 0, comment: comment}
  },
- // async deleteComment(taskID, commentId){
- //
- // }
+ async deleteComment(taskId, commentId){
+   if(!taskId) throw "YOU MUST PROVIDE AN ID TO SEARCH FOR.";
+   if(!commentId) throw "YOU MUST PROVIDE A COMMENT ID TO SEARCH FOR.";
+   if(typeof taskId !=="string") throw "ID is not valid"
+   if(typeof commentId !=="string") throw "ID IS NOT VALID"
+   try{
+     const taskToDeleteFrom = await taskCollection.findOne({_id: taskId})
+     console.log(taskToDeleteFrom)
+   }catch(e){
+     throw err;
+   }
+ }
 };
 
 
