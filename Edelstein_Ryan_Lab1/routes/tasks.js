@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   const taskInfo = req.body;
   if (!taskInfo) {
     res.status(400).json({ error: "You must provide data to create a task" });
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
     res.status(400).json({ error: "You must provide a number of hours Estimated" });
     return;
   }
-  if (!taskInfo.completed) {
+  if (!("completed" in taskInfo)) {
     res.status(400).json({ error: "You must provide a yes or no value" });
     return;
   }
@@ -125,9 +125,10 @@ router.post("/:id/comments", async(req, res)=>{
 })
 
 router.delete("/:taskId/:commentId", async(req,res)=>{
-  const { id, comment } = req.params
+  const { taskId, commentId } = req.params
   try {
-    
+    const deleted = await taskData.deleteComment(taskId, commentId)
+    res.status(200).json(deleted)
   } catch (e) {
     res.status(500).json({error:e});
   }

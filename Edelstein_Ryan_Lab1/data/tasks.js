@@ -12,7 +12,7 @@ let exportedMethods = {
     });
   },
   getTaskById(id) {
-    console.log(id)
+    // console.log(id)
     return tasks().then(taskCollection => {
       return taskCollection.findOne({ _id: id }).then(task => {
         if (!task) throw "Task not found";
@@ -120,7 +120,7 @@ let exportedMethods = {
     if (typeof comment !== "string") throw "You must provide a valid comment";
 
 
-    const taskCollection = await tasks();
+    const taskCollection = await tasks()
     const newComment = {
       _id: uuid.v4(),
       name: name,
@@ -134,9 +134,13 @@ let exportedMethods = {
    if(!commentId) throw "YOU MUST PROVIDE A COMMENT ID TO SEARCH FOR.";
    if(typeof taskId !=="string") throw "ID is not valid"
    if(typeof commentId !=="string") throw "ID IS NOT VALID"
+  //  console.log("here")
+  const taskCollection = await tasks()
    try{
-     const taskToDeleteFrom = await taskCollection.findOne({_id: taskId})
-     console.log(taskToDeleteFrom)
+    //  console.log(taskId)
+     const deleted = await taskCollection.updateOne({ _id: taskId }, {$pull: {comments: {_id: commentId}}})
+    //  console.log(deleted);
+     return {commentDeleted: deleted.modifiedCount > 0}
    }catch(e){
      throw err;
    }
