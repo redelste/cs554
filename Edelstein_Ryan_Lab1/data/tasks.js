@@ -6,10 +6,10 @@ const uuid = require("node-uuid");
 
 
 let exportedMethods = {
-  getAllTasks() {
-  return tasks().then(taskCollection => {
-    return taskCollection.find({}).toArray();
-    });
+  getAllTasks(skipCount, takeCount) {
+    return tasks().then(taskCollection => {
+      return taskCollection.find().limit(takeCount).skip(skipCount).toArray();
+    })
   },
   getTaskById(id) {
     // console.log(id)
@@ -104,7 +104,7 @@ let exportedMethods = {
       if(patchedTask.hoursEstimated){
         newTaskboy.hoursEstimated = patchedTask.hoursEstimated;
       }
-      if(patchedTask.completed){
+      if("completed" in patchedTask){
         newTaskboy.completed = patchedTask.completed;
       }
       let newData = {
@@ -112,7 +112,9 @@ let exportedMethods = {
       }
       const patched = await taskCollection.updateOne({_id:id}, newData)
       return await this.getTaskById(id);
-    }catch(e){}
+    }catch(e){
+      console.log(e)
+    }
   },
   async addComment(id, name, comment) {
     if (!id) throw "Please Provide a task ID"

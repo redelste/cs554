@@ -15,8 +15,10 @@ router.get("/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const taskList = await taskData.getAllTasks();
-    console.log(req.body);
+    const skipCount = (req.query.skip) ? parseInt(req.query.skip) : 0
+    const takeCount = (req.query.take) ? Math.min(parseInt(req.query.take), 100) : 20
+    const taskList = await taskData.getAllTasks(skipCount, takeCount)
+    // console.log(req.body);
     res.json(taskList);
   } catch (e) {
     // Something went wrong with the server!
