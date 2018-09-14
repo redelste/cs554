@@ -1,9 +1,10 @@
 {
   "name": "edelstein_ryan_lab2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Ryan Edelstein`",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
