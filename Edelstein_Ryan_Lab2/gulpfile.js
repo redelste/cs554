@@ -8,7 +8,7 @@ const rename = require("gulp-rename")
 const sassFiles = 'src/styles/*.scss'
 
 gulp.task('sass', () => {
-    gulp.src('src/styles/*.scss')
+    return gulp.src('src/styles/*.scss')
         .pipe(gulpSASS())
         .pipe(concatenate('styles.css'))
         .pipe(gulp.dest('public/css/'))
@@ -17,10 +17,10 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('public/css/'))
 })
 
-gulp.task('build', ['sass'])
+gulp.task('build', gulp.series(['sass']))
 
-gulp.task('watch', () => {
-    gulp.watch(sassFiles, ['sass'])
-})
+gulp.task('watch', () =>
+    gulp.watch(sassFiles, gulp.series(['sass']))
+)
 
-gulp.task('default', ['watch'])
+gulp.task('default', gulp.series(['build']))
