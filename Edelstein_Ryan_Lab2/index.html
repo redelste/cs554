@@ -18,58 +18,68 @@
 </head>
 
 <body>
-    <div class="container-fluid h-100">
+    <div class="container-fluid height:100%">
         <div class="row h-100">
-            <aside class="col-12 col-md-2 p-0 bg-dark">
-                <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-                    <div class="collapse navbar-collapse">
-                        <ul class="flex-md-column flex-row navbar-nav w-50 justify-content-between">
-                            <h3>Flavors</h3>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-heart-o fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-book fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-heart fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-star fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </aside>
+          <aside class="col-12 col-md-2 p-0 bg-dark">
+            <nav class="navbar navbar-expand  flex-md-column flex-row align-items-start py-2">
+                <div class="collapse navbar-collapse">
+                    <ul class="flex-md-column flex-row navbar-nav w-50 justify-content-between">
+                        <h3 class="white">Flavorinos</h3>
+                        <li class="nav-item">
+                          <a href="#blackCurrantJump">Black Currant</a> <!--1 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#lemonJump">Lemon</a> <!--2 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#greenAppleJump">Green Apple</a><!--3 -->
+                        </li>
+                        <li class="nav-item">
+                          <a href="#orangeSkittleJump">Orange</a><!--4 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#strawberryJump">Strawberry</a><!--5 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#cherryColaJump">Cherry Cola</a><!--6 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#bBerryJump">Banana Berry</a><!--7 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#klimeJump">Kiwi Lime</a><!--8 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#brlJump">Blue Raspberry Lemon</a><!--9 -->
+                        </li>
+                        <li class="nav-item">
+                            <a href="#sourGrapeJump">Sour Grape</a><!--9 -->
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+          </aside>
+
+
             <main class="col bg-faded py-3">
                 <h2>Taste the Rainbow</h2>
                 <div class='container-fluid'>
                   <div class="row">
                     <div class="col-md-10">
                       <div class="row">
+
+
+
                           <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="blackCurrantJump">
                               <div class="card">
+                                  <img class="card-img-top" src=" public/images/purpleskittle.jpeg">
                                   <div class="card-block">
                                       <h3 class="card-title">Blackcurrant</h3>
                                       <div class="card-text">
                                           Blackcurrant
-                                          <br>
-                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#blackCurrant">Black Currant</button>
+                                         <br>
+                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#blackCurrant">PRESS</button>
 
                                           <div class="modal fade" id="blackCurrant" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                              <div class="modal-dialog modal-lg">
@@ -80,20 +90,26 @@
                                               </div>
                                             </div>
                                           </div>
-                                        </br>
-
                                       </div>
                                   </div>
                               </div>
+                            </div>
                           </div>
+
+
+
+
+
                           <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="lemonJump">
                               <div class="card">
+                              <img class="card-img-top" src=" public/images/yellowskittle.jpg">
                                   <div class="card-block">
                                       <h3 class="card-title">Lemon</h3>
                                       <div class="card-text">
                                           Lemon
                                           <br>
-                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lemon">Black Currant</button>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lemon">PRESS</button>
 
                                            <div class="modal fade" id="lemon" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                               <div class="modal-dialog modal-lg">
@@ -105,110 +121,233 @@
                                                </div>
                                              </div>
                                            </div>
-                                         </br>
+
                                       </div>
                                   </div>
                               </div>
+                            </div>
                           </div>
+
+
+
                           <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="greenAppleJump">
                               <div class="card">
+                                <img class="card-img-top" src=" public/images/riplime.jpg">
                                   <div class="card-block">
                                       <h3 class="card-title">Green Apple</h3>
                                       <div class="card-text">
-                                          R.I.P. Lime :(
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 4
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 5
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 6
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 7
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 8
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 9
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3">
-                              <div class="card">
-                                  <div class="card-block">
-                                      <h3 class="card-title">The title</h3>
-                                      <div class="card-text">
-                                          The text 10
+                                          RIP LIME
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#greenApple">PRESS</button>
 
-
+                                           <div class="modal fade" id="greenApple" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p> The Green Apple Skittle is the most controversial of the skittle bunch.
+                                                  It was once the fan favorite lime skittle, however as of 2013 it was replaced by Green Apple
+                                                in Tawian, South Korea, China, Australia, and the United States of America. Rest in peace Lime.</p>
+                                               </div>
+                                             </div>
+                                           </div>
 
                                       </div>
                                   </div>
                               </div>
+                            </div>
                           </div>
+
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                              <div id="orangeSkittleJump">
+                              <div class="card">
+                                  <img class="card-img-top" src=" public/images/orangeskittle.jpg">
+                                  <div class="card-block">
+                                      <h3 class="card-title">orange</h3>
+                                      <div class="card-text">
+                                          The orange one
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#orangeSkittle">PRESS</button>
+
+                                           <div class="modal fade" id="orangeSkittle" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p>  The Orange Skittle is one of the most diverse flavors. It takes on over 10 different other flavors
+                                               in the Skittles family including Mandarin Orange, Juicy Orange, Blood Orange, Orange Creme, Orange,
+                                               Mango tangelo, Sweet Orange, Twisted Tangerine, tangerine, Sour Mandarin, Blazin' Mango, Flamin' Orange, and Sour Orange.</p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="strawberryJump">
+                              <div class="card">
+                                  <img class="card-img-top" src=" public/images/redskittle.jpeg">
+                                  <div class="card-block">
+                                      <h3 class="card-title">Strawberry</h3>
+                                      <div class="card-text">
+                                          The red one
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#strawberry">PRESS</button>
+
+                                           <div class="modal fade" id="strawberry" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p>  The Strawberry Skittle, another fan favorite, often taking the champion spot in terms of popularity is also one of the original 6.
+                                               This power ranger of a skittle is by far the most memorable color with its famous bright red color much like the first color in the rainbow,
+                                             and the color of the Iconic skittles packaging.</p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                              <div id="cherryColaJump">
+                              <img class="card-img-top" src=" public/images/blueskittle.jpg">
+                              <div class="card">
+                                  <div class="card-block">
+                                      <h3 class="card-title">Cherry Cola</h3>
+                                      <div class="card-text">
+                                          The blue one
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cherryCola">PRESS</button>
+
+                                           <div class="modal fade" id="cherryCola" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p>  Cherry cola is ok. Not many people know of it. It's part of the original packaging from the late 1970s and has been
+                                                 included in many Tropical packs since then.</p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="bBerryJump">
+                              <div class="card">
+                                <img class="card-img-top" src=" public/images/yellowskittle.jpg">
+                                  <div class="card-block">
+                                      <h3 class="card-title">Banana Berry</h3>
+                                      <div class="card-text">
+                                          Another yellow one
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bBerry">PRESS</button>
+
+                                           <div class="modal fade" id="bBerry" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p> The Banana Berry Skittle is always the most disappointing of the Skittles. It looks like lemon, but tastes oddly fruity.
+                                               Everyone knows that banana candy is always hit or miss and I think the Banana Berry Skittle is a HARD miss! </p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="klimeJump">
+                              <div class="card">
+                                  <img class="card-img-top" src=" public/images/riplime.jpg">
+                                  <div class="card-block">
+                                      <h3 class="card-title">Kiwi Lime</h3>
+                                      <div class="card-text">
+                                          A sad green one
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#klime">PRESS</button>
+
+                                           <div class="modal fade" id="klime" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p>Again, the green skittle does not get the justice it deserves. The green skittle is always the most underwhelming of them all.
+                                               Given that the Lime flavor that everyone came to know and love back in 1974 has now been poorly replaced with a sadly sweetened version
+                                             of the famous Lime skittle. </p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                              <div id="brlJump">
+                              <div class="card">
+                                  <img class="card-img-top" src=" public/images/crazycore.jpg">
+                                  <div class="card-block">
+                                      <h3 class="card-title">Blue Raspberry Lemon</h3>
+                                      <div class="card-text">
+                                          A mixed up fella!
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#brl">PRESS</button>
+
+                                           <div class="modal fade" id="brl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p> Stepping into the 21st century we're greeted with some crazy concoctions developed by the Skittles company.
+                                               In 2008 they introduced "skittles CRAZY CORES". Each respective skittle had an outside color but a core of a complementary
+                                             inside color. Blue raspberry lemon is the first on the roster and it surely has its game face on! </p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div id="sourGrapeJump">
+                              <div class="card">
+                                  <img class="card-img-top" src=" public/images/sourskits.jpg">
+                                  <div class="card-block">
+                                      <h3 class="card-title">Sour Grape</h3>
+                                      <div class="card-text">
+                                          Really upset purple!
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sadGrape">PRESS</button>
+
+                                           <div class="modal fade" id="sadGrape" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-lg">
+                                               <div class="modal-content">
+                                               <p> Sour Grape is the first on the roster of the famous sour skittles branch. The best way to rip your mouth open and accurately
+                                               simulate chewing on glass is to grab a bag of Sour Skittles and chow down on some sour grape boys and some of his friends!</p>
+                                               </div>
+                                             </div>
+                                           </div>
+
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
                       </div>
                     </div>
                   </div>
                 </div>
-
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#test">Large mo328472938742389dal</button>
-
-                    <div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                          76419238746198237461982374691827346
-                        </div>
-                      </div>
-                    </div>
-
-
             </main>
         </div>
     </div>

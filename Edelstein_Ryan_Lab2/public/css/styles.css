@@ -6313,10 +6313,16 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 p {
-  color: red; }
+  color: black; }
 
 body, html {
   height: 100%; }
 
 .card, .col-sm-6, .col-md-10, .col-lg-3 {
   padding-top: 20px; }
+
+aside {
+  background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet); }
+
+a, .white {
+  color: white; }

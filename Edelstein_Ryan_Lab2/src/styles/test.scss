@@ -1,7 +1,7 @@
 @import '../../bootstrap-4.1.3/scss/bootstrap';
 
 p {
-  color: red;
+  color: black;
 }
 
 body,html{
@@ -11,4 +11,13 @@ body,html{
 
 .card,.col-sm-6,.col-md-10, .col-lg-3{
   padding-top: 20px;
+}
+
+
+aside{
+  background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+}
+
+a, .white{
+  color: white;
 }
